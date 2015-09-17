@@ -1,5 +1,4 @@
 #!/usr/bin/python
-# coding=utf-8
 #python 缩进格式
 a = 100
 if a >=0:
