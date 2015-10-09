@@ -1,0 +1,81 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+#函数式编程
+#函数式编程的特点是，允许把函数本身作为参数传入另一个函数，还允许返回一个函数
+
+#高阶函数
+
+#变量指向函数,函数名称可以看成一个变量 例如abs()的函数名abs就可以看作一个变量
+
+f = abs
+print(f)
+print(f(-10))
+
+#函数名也是变量
+def add(x, y, f):
+	return f(x) + f(y)
+print(add(-10, 10, abs))
+
+#map/reduce
+
+#map()函数接收两个参数，一个是函数，一个是Iterable，map将传入的函数依次作用到序列的每个元素，并把结果作为新的Iterator返回。
+
+def f(x):
+	return x * x
+r = map(f, [1, 2, 3, 4, 5])
+print(r)
+print(list(r))
+
+#reduce把一个函数作用在一个序列[x1, x2, x3, ...]上，这个函数必须接收两个参数，reduce把结果继续和序列的下一个元素做累积计算
+#reduce(f, [x1, x2, x3, x4]) = f(f(f(x1, x2), x3), x4)
+
+from functools import reduce
+def add_1(x, y):
+	return x + y
+result = reduce(add_1, [1, 2, 3, 4, 5])
+print(result)
+
+print(sum([1,2,3,4,5]))
+
+def fn(x, y):
+	return x * 10 + y
+	
+result = reduce(fn, [1, 2, 3, 4, 5])
+print(result)
+
+def char2num(s):
+	return {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9}[s]
+
+result =  reduce(fn, map(char2num, '12345'))
+print(result)
+
+#lambda匿名函数
+
+def str2int(s):
+	return reduce(lambda x, y: x * 10 + y, map(char2num, '12345'))
+result = str2int('12345')
+print(result)
+
+#练习
+
+def fn_1(name):
+	return name[0].upper()+name[1:].lower()
+	
+L1 = ['adam', 'LISA', 'barT']
+print(list(map(fn_1, L1)))
+
+def fn_2(L):
+	def subFn(x, y):
+		return x * y
+	return reduce(subFn, L)
+
+print(fn_2([1, 2, 3, 4]))
+
+def fn_3(s):
+	str1, str2 = s.split('.')
+	def subFn(x, y):
+		return x * 10 + y
+	return reduce(subFn, map(int, str1)) + reduce(subFn, map(int, str2)) / 10 ** len(str2)
+
+print(fn_3('123.45'))
