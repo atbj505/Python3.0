@@ -3,6 +3,7 @@
 
 #list 和 tuple 数组 元组
 
+#数组可以修改
 classmates = ['Michael','Bob','Tracy']
 print('classmates =',classmates)
 

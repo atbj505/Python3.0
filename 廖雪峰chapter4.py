@@ -13,7 +13,8 @@ elif age >= 6:
 else:
 	print('your age is',age)
 	print('kid')
-	
+
+#int 转换成int类型
 s = '1990'
 birth = int(s)
 if birth < 1990:

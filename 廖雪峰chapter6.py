@@ -78,6 +78,8 @@ print(power(5, 2))
 print(power(6, 2))
 
 #可变参数
+#*适用于可变参数为数组和元祖类型
+#**适用于可变参数为字典类型
 
 def calc(*numbers):
 	sum = 0
@@ -106,6 +108,7 @@ person('Jack', 24, **extra)
 
 
 #命名关键字参数
+#*后面为参数的命名，调用时需要指定参数名，如不这样做会报错
 
 def person2(name, age, *, city, job):
 	print(name, age, city, job)

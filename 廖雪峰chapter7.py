@@ -53,7 +53,7 @@ for key in d.keys():
 	print(key)
 for value in d.values():
 	print(value)
-for key, value in d.items():
+for (key, value) in d.items():
 	print(key, value)
 	
 for ch in 'ABC':
@@ -80,7 +80,7 @@ print([m + n for m in 'ABC' for n in 'XYZ'])
 
 import os
 
-print([d for d in os.listdir('/usr')])
+print([d for d in os.listdir('/Users/yangqihui')])
 
 d = {'x': 'A', 'y': 'B', 'z': 'C' }
 
