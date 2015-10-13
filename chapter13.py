@@ -42,7 +42,7 @@ s.name = 'Michael'
 s.age = 25
 #s.score = 99
 
-class GraduateStudent(Student):
+class GraduateStudent(Student_slots):
 	pass
 g = GraduateStudent()
 g.score = 99
@@ -240,8 +240,8 @@ Month = Enum('Month', ('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', '
 for name, member in Month.__members__.items():
 	print(name, '=>', member, ',', member.value)
 
-from enum import Enum, unique
 
+from enum import Enum, unique
 @unique #保证没有重复值
 class Weekday(Enum):
 	Sun = 0
@@ -277,7 +277,7 @@ print(type(h))
 #创建class的方法是使用type()函数实现的
 #type()传入3个参数
 #1.类名
-#2.继承的父类集合
+#2.继承的父类集合(元组)
 #3.class的方法名与函数绑定
 def fn(self, name = 'Fuck'):
 	print('%s, world.' % name)
