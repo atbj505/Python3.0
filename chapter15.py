@@ -40,12 +40,12 @@ f = open('/Users/yangqihui/gbk.txt', 'r', encoding = 'gbk', errors = 'ignore')
 #写文件
 #'w'写文本文件，'wb'写二进制文件
 
-f = open('/Users/yangqihui/gbk.txt', 'w')
-f.write('Hello, world!')
-f.close()
-
-with open('/Users/yangqihui/gbk.txt', 'w') as f:
-    f.write('Hello, world!')
+#f = open('/Users/yangqihui/gbk.txt', 'w')
+#f.write('Hello, world!')
+#f.close()
+#
+#with open('/Users/yangqihui/gbk.txt', 'w') as f:
+#    f.write('Hello, world!')
 
 #StringIO和BytesIO
 
